@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <lyn.android.view.StaggeredGridView
+        android:id="@+id/staggered_grid_staggeredgridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="200dp"
+            android:gravity="center"
+            android:text="haha"
+            android:background="#ff0000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:background="#00ff00"
+            android:text="haha"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="#0000ff"
+            android:gravity="center"
+            android:text="haha"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="300dp"
+            android:background="#00ffff"
+            android:gravity="center"
+            android:text="haha"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:background="#ff00ff"
+            android:layout_height="200dp"
+            android:gravity="center"
+            android:text="haha"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#ffff00"
+            android:gravity="center"
+            android:text="haha"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:background="#f0f0f0"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="haha"
+            android:textSize="16sp" />
+    </lyn.android.view.StaggeredGridView>
+
+</LinearLayout>
