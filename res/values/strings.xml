@@ -1,5 +1,6 @@
 <resources>
 
     <string name="app_name">Lyn</string>
+    <string name="video_system_unsupport">您的系统不支持查看此类型内容，请升级到安卓4.0以上</string>
 
 </resources>

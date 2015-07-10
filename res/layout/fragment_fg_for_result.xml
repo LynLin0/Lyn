@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top" >
+
+    <Button
+        android:id="@+id/fragment_for_result_activity_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="activity.startActivityForResult" />
+
+    <Button
+        android:id="@+id/fragment_for_result_fragment_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_for_result_activity_btn"
+        android:text="fragment.startActivityForResult" />
+
+<!--     <FrameLayout -->
+<!--         android:id="@+id/fragment_for_result_sub_layout" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_below="@id/fragment_for_result_fragment_btn" /> -->
+	<android.support.v4.view.ViewPager
+	    android:id="@+id/fragment_for_result_viewpager"
+	    android:layout_width="match_parent"
+	    android:layout_below="@id/fragment_for_result_fragment_btn"
+	    android:layout_height="150dp"
+	    />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fragment_for_result_viewpager"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="20dp" >
+
+        <TextView
+            android:id="@+id/fragment_for_result_result_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="result"
+            android:textSize="16sp" />
+    </ScrollView>
+
+</RelativeLayout>

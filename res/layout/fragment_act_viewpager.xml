@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <lyn.android.fragment.viewpager.NonSwipeableViewPager
+        android:id="@+id/fragment_viewpager_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0" />
+
+    <RadioGroup
+        android:id="@+id/fragment_viewpager_first_radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.0"
+        android:background="#ffff00"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/fragment_viewpager_first_radiobutton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:checked="true"
+            android:text="first" />
+
+        <RadioButton
+            android:id="@+id/fragment_viewpager_second_radiobutton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1.0"
+             android:gravity="center"
+            android:text="second" />
+
+        <RadioButton
+            android:id="@+id/fragment_viewpager_third_radiobutton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1.0"
+             android:gravity="center"
+            android:text="third" />
+        <RadioButton
+            android:id="@+id/fragment_viewpager_fourth_radiobutton"
+            android:layout_height="40dp"
+            android:layout_weight="1.0"
+             android:gravity="center"
+            android:text="fourth" />
+    </RadioGroup>
+
+</LinearLayout>

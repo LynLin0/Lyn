@@ -1,6 +1,6 @@
 package lyn.android.view;
 
-import lyn.android.util.LynLog;
+import lyn.android.util.SwitchLogger;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;

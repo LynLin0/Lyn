@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@android:color/black"
+    >
+
+    <TextureView
+        android:id="@+id/video_textureview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        tools:ignore="NewApi" />
+
+    <ImageView
+        android:id="@+id/video_preview_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black" />
+
+    <ProgressBar
+        android:id="@+id/video_progressbar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/loading_video"
+        android:indeterminateDuration="1200"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/video_play_imageview"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/icon_video_play" />
+</FrameLayout>

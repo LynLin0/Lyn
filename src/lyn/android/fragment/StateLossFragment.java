@@ -1,7 +1,7 @@
 package lyn.android.fragment;
 
 import lyn.android.R;
-import lyn.android.util.LynLog;
+import lyn.android.util.SwitchLogger;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -29,10 +29,10 @@ public class StateLossFragment extends LogFragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater,
 			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		LynLog.d("Fragment", "onCreateView start");
+		SwitchLogger.d("Fragment", "onCreateView start");
 		View layout = inflater.inflate(R.layout.fg_state_loss, container,false);
 		txt = layout.findViewById(R.id.state_loss_txt);
-		LynLog.d("Fragment", "onCreateView end");
+		SwitchLogger.d("Fragment", "onCreateView end");
 		return layout;
 	}
 	
@@ -49,9 +49,9 @@ public class StateLossFragment extends LogFragment{
 	
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		LynLog.d("Fragment", "onActivityResult start");
+		SwitchLogger.d("Fragment", "onActivityResult start");
 		super.onActivityResult(requestCode, resultCode, data);
-		LynLog.d("Fragment", "onActivityResult end");
+		SwitchLogger.d("Fragment", "onActivityResult end");
 	}
 	
 }

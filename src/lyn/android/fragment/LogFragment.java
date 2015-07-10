@@ -1,6 +1,6 @@
 package lyn.android.fragment;
 
-import lyn.android.util.LynLog;
+import lyn.android.util.SwitchLogger;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -19,88 +19,96 @@ public class LogFragment extends Fragment{
 
 	@Override
 	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-		LynLog.d("Fragment", "onActivityCreated start");
+		SwitchLogger.d("Fragment", "onActivityCreated start");
 		super.onActivityCreated(savedInstanceState);
-		LynLog.d("Fragment", "onActivityCreated end");
+		SwitchLogger.d("Fragment", "onActivityCreated end");
+	}
+	
+	@Override
+	public void setUserVisibleHint(boolean isVisibleToUser) {
+		SwitchLogger.d("Fragment", "setUserVisibleHint start");
+		super.setUserVisibleHint(isVisibleToUser);
+		SwitchLogger.d("Fragment", "setUserVisibleHint end");
+		
 	}
 
 	@Override
 	public void onAttach(Activity activity) {
-		LynLog.d("Fragment", "onAttach start");
+		SwitchLogger.d("Fragment", "onAttach start");
 		super.onAttach(activity);
-		LynLog.d("Fragment", "onAttach end");
+		SwitchLogger.d("Fragment", "onAttach end");
 	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		LynLog.d("Fragment", "onCreate start");
+		SwitchLogger.d("Fragment", "onCreate start");
 		super.onCreate(savedInstanceState);
-		LynLog.d("Fragment", "onCreate end");
+		SwitchLogger.d("Fragment", "onCreate end");
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater,
 			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		LynLog.d("Fragment", "onCreateView start");
+		SwitchLogger.d("Fragment", "onCreateView start");
 		View view = super.onCreateView(inflater, container, savedInstanceState);
-		LynLog.d("Fragment", "onCreateView end");
+		SwitchLogger.d("Fragment", "onCreateView end");
 		return view;
 	}
 
 	@Override
 	public void onDestroy() {
-		LynLog.d("Fragment", "onDestroy start");
+		SwitchLogger.d("Fragment", "onDestroy start");
 		super.onDestroy();
-		LynLog.d("Fragment", "onDestroy end");
+		SwitchLogger.d("Fragment", "onDestroy end");
 	}
 
 	@Override
 	public void onDestroyView() {
-		LynLog.d("Fragment", "onDestroyView start");
+		SwitchLogger.d("Fragment", "onDestroyView start");
 		super.onDestroyView();
-		LynLog.d("Fragment", "onDestroyView end");
+		SwitchLogger.d("Fragment", "onDestroyView end");
 	}
 
 	@Override
 	public void onDetach() {
-		LynLog.d("Fragment", "onDetach start");
+		SwitchLogger.d("Fragment", "onDetach start");
 		super.onDetach();
-		LynLog.d("Fragment", "onDetach end");
+		SwitchLogger.d("Fragment", "onDetach end");
 	}
 
 	@Override
 	public void onHiddenChanged(boolean hidden) {
-		LynLog.d("Fragment", "onHiddenChanged start");
+		SwitchLogger.d("Fragment", "onHiddenChanged start");
 		super.onHiddenChanged(hidden);
-		LynLog.d("Fragment", "onHiddenChanged end");
+		SwitchLogger.d("Fragment", "onHiddenChanged end");
 	}
 
 	@Override
 	public void onPause() {
-		LynLog.d("Fragment", "onPause start");
+		SwitchLogger.d("Fragment", "onPause start");
 		super.onPause();
-		LynLog.d("Fragment", "onPause end");
+		SwitchLogger.d("Fragment", "onPause end");
 	}
 
 	@Override
 	public void onResume() {
-		LynLog.d("Fragment", "onResume start");
+		SwitchLogger.d("Fragment", "onResume start");
 		super.onResume();
-		LynLog.d("Fragment", "onResume end");
+		SwitchLogger.d("Fragment", "onResume end");
 	}
 
 	@Override
 	public void onStart() {
-		LynLog.d("Fragment", "onStart start");
+		SwitchLogger.d("Fragment", "onStart start");
 		super.onStart();
-		LynLog.d("Fragment", "onStart end");
+		SwitchLogger.d("Fragment", "onStart end");
 	}
 
 	@Override
 	public void onStop() {
-		LynLog.d("Fragment", "onStop start");
+		SwitchLogger.d("Fragment", "onStop start");
 		super.onStop();
-		LynLog.d("Fragment", "onStop end");
+		SwitchLogger.d("Fragment", "onStop end");
 	}
 	
 

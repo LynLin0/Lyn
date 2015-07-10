@@ -1,6 +1,6 @@
 package lyn.android.view;
 
-import lyn.android.util.LynLog;
+import lyn.android.util.SwitchLogger;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff.Mode;
@@ -171,14 +171,14 @@ public class PullToRefreshListView extends LinearLayout {
 
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_DOWN:
-			LynLog.d(TAG, "touch 1");
+			SwitchLogger.d(TAG, "touch 1");
 			if (isFirstPull) {
 				startY = event.getY();
 				isFirstPull = false;
 			}
 			return true;
 		case MotionEvent.ACTION_MOVE:
-			LynLog.d(TAG, "touch 2");
+			SwitchLogger.d(TAG, "touch 2");
 			if (isFirstPull) {
 				startY = event.getY();
 				isFirstPull = false;
@@ -196,7 +196,7 @@ public class PullToRefreshListView extends LinearLayout {
 			return true;
 		case MotionEvent.ACTION_UP:
 		case MotionEvent.ACTION_CANCEL:
-			LynLog.d(TAG, "touch 3");
+			SwitchLogger.d(TAG, "touch 3");
 			if (currStatus == Status.PULL_DOWN) {
 				if (Math.abs(disY) >= headHeight) {
 					postDelayed(new SmoothScrollRunnable(disY, -headHeight,
@@ -223,14 +223,14 @@ public class PullToRefreshListView extends LinearLayout {
 
 	@Override
 	public boolean onInterceptTouchEvent(MotionEvent ev) {
-		LynLog.d(TAG, "isRecovering = " + isRecovering);
+		SwitchLogger.d(TAG, "isRecovering = " + isRecovering);
 		switch (ev.getAction()) {
 		case MotionEvent.ACTION_DOWN:
-			LynLog.d(TAG, "inter 1");
+			SwitchLogger.d(TAG, "inter 1");
 			actionDownY = ev.getY();
 			return false;
 		case MotionEvent.ACTION_MOVE:
-			LynLog.d(TAG, "inter 2");
+			SwitchLogger.d(TAG, "inter 2");
 			if (ev.getY() > actionDownY) {
 				if (innerListView.getFirstVisiblePosition() == 0) {
 					if (innerListView.getChildAt(0).getTop() >= innerListView

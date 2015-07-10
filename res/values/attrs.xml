@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="slidingCursor">
+        <attr name="count" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="PrayProgressBar">
+        <attr name="position">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <attr name="text" format="string" />
+    </declare-styleable>
+    <declare-styleable name="VideoView">
+        <attr name="playImg" format="reference" />
+    </declare-styleable>
+
+</resources>

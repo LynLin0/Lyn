@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import lyn.android.util.LynLog;
+import lyn.android.util.SwitchLogger;
 import android.R.integer;
 import android.content.Context;
 import android.support.v4.view.MotionEventCompat;

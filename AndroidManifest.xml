@@ -7,6 +7,15 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
 
+    <!-- 授予该程序录制声音的权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 授予该程序使用摄像头的权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 授予使用外部存储器的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -16,11 +25,40 @@
         </activity>
         <activity android:name=".fragment.ResultActivity" >
         </activity>
-        <activity android:name=".PullToRefreshActivity"></activity>
-        <activity android:name=".StrictModeActivity"/>
-        <activity android:name=".LineEndActivity"/>
-        <activity android:name=".fragment.FragmentPracticeActivity"/>
-        <activity android:name=".HomeActivity">
+        <activity android:name=".PullToRefreshActivity" >
+        </activity>
+        <activity android:name=".StrictModeActivity" />
+        <activity android:name=".LineEndActivity" />
+        <activity android:name=".fragment.FragmentPracticeActivity" />
+        <activity android:name="lyn.android.fragment.argument.FragmentArgumentActivity" />
+        <activity
+            android:name="lyn.android.fragment.dialog.FragmentDialogActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lyn.android.fragment.viewpager.FragmentViewPagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lyn.android.fragment.result.FragmentForResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lyn.android.fragment.result.FragmentSetResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lyn.android.media.RecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lyn.android.media.MediaPlayerTestActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait" />
+		<activity 
+		    android:name="lyn.android.media.MediaPlayerViewTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lyn.android.fragment.stack.FragmentStackActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity android:name=".HomeActivity" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
 
