@@ -3,15 +3,22 @@ package lyn.android;
 import java.util.ArrayList;
 import java.util.List;
 
+import lyn.android.activity.CleanTopActivity;
+import lyn.android.dialog.DialogActivity;
 import lyn.android.fragment.FragmentPracticeActivity;
 import lyn.android.fragment.argument.FragmentArgumentActivity;
 import lyn.android.fragment.dialog.FragmentDialogActivity;
 import lyn.android.fragment.result.FragmentForResultActivity;
 import lyn.android.fragment.stack.FragmentStackActivity;
 import lyn.android.fragment.viewpager.FragmentViewPagerActivity;
+import lyn.android.handler.HandlerActivity;
+import lyn.android.keyboard.KeyboardActivity;
+import lyn.android.media.MediaCacheActivty;
 import lyn.android.media.MediaPlayerTestActivity;
 import lyn.android.media.MediaPlayerViewTestActivity;
 import lyn.android.media.RecordActivity;
+import lyn.android.media.TestPlayerPauseActivity;
+import lyn.android.util.SwitchLogger;
 import lyn.android.util.Util;
 import lyn.android.view.PullToRefreshListView;
 
@@ -53,6 +60,12 @@ public class HomeActivity extends Activity{
 //		listView.setAdapter(new HomeAdapter().addItem("StaggeredGridView", StaggeredGridActivity.class));
 		listView.setAdapter(new HomeAdapter().addItem("MediaPlayerTest", MediaPlayerTestActivity.class));
 		listView.setAdapter(new HomeAdapter().addItem("PlayerView", MediaPlayerViewTestActivity.class));
+		listView.setAdapter(new HomeAdapter().addItem("DialogOnPause", DialogActivity.class));
+		listView.setAdapter(new HomeAdapter().addItem("MediaCache", MediaCacheActivty.class));
+		listView.setAdapter(new HomeAdapter().addItem("RemoveRunnable", HandlerActivity.class));
+		listView.setAdapter(new HomeAdapter().addItem("CleanTop", CleanTopActivity.class));
+		listView.setAdapter(new HomeAdapter().addItem("Keyboard", KeyboardActivity.class));
+//		listView.setAdapter(new HomeAdapter().addItem("Pause", TestPlayerPauseActivity.class));
 //		listView.setAdapter(new HomeAdapter().addItem("LineEnd", LineEndActivity.class));
 //		listView.setAdapter(new HomeAdapter().addItem("Fragment", FragmentPracticeActivity.class));
 //		listView.setAdapter(new HomeAdapter().addItem("FragmentForResult", FragmentForResultActivity.class));
@@ -63,6 +76,7 @@ public class HomeActivity extends Activity{
 		
 		frameLayout.addView(listView);
 		setContentView(frameLayout);
+		SwitchLogger.d("TIME", "time="+(System.currentTimeMillis()-LynApplication.lastTime));
 	}
 	
 	private class Item{

@@ -8,6 +8,7 @@ import lyn.android.R;
 import lyn.android.util.SwitchLogger;
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.SurfaceTexture;
 import android.media.AudioManager;
@@ -21,6 +22,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Surface;
 import android.view.TextureView;
@@ -31,6 +33,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * @author Lyn lynlin@vanchu.net
@@ -345,17 +348,34 @@ public class VideoView extends FrameLayout implements OnClickListener,
 	public boolean onError(MediaPlayer mp, int what, int extra) {
 		SwitchLogger.e("MEDIA", "error:what=" + what + " extra=" + extra);
 		if (what == 1 && extra == -1004) {
-			// GmqTip.show(getContext(), R.string.network_exception);
+			 Toast.makeText(getContext(), "网络异常", 1000).show();
 		} else {
-			// GmqTip.show(getContext(), "视频播放失败");
+			Toast.makeText(getContext(),"视频播放失败",1000).show();
 		}
 		reset();
 		return true;
+	}
+	
+	private void sendMediaButton(Context context, int keyCode) {
+	    KeyEvent keyEvent = new KeyEvent(KeyEvent.ACTION_DOWN, keyCode);
+	    Intent intent = new Intent(Intent.ACTION_MEDIA_BUTTON);
+	    intent.putExtra(Intent.EXTRA_KEY_EVENT, keyEvent);
+	    context.sendOrderedBroadcast(intent,null);
+
+	    keyEvent = new KeyEvent(KeyEvent.ACTION_UP, keyCode);
+	    intent = new Intent(Intent.ACTION_MEDIA_BUTTON);
+	    intent.putExtra(Intent.EXTRA_KEY_EVENT, keyEvent);
+	    context.sendOrderedBroadcast(intent,null);
 	}
 
 	@TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
 	public void toPrepare() {
 		try {
+			AudioManager audioManager = (AudioManager)getContext() 
+					.getSystemService(Context.AUDIO_SERVICE);
+			int result = audioManager.requestAudioFocus(null, AudioManager.STREAM_MUSIC,
+					AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+			
 			mediaPlayer = new MediaPlayer();
 			mediaPlayer.reset();
 			mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -389,6 +409,9 @@ public class VideoView extends FrameLayout implements OnClickListener,
 		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
 			return;
 		}
+		AudioManager audioManager = (AudioManager) getContext()
+				.getSystemService(Context.AUDIO_SERVICE);
+		int result = audioManager.abandonAudioFocus(null);
 		SwitchLogger.d("MEDIA", "reset");
 		textureView.setVisibility(View.GONE);
 		previewImageView.setVisibility(View.VISIBLE);
@@ -401,6 +424,7 @@ public class VideoView extends FrameLayout implements OnClickListener,
 
 	public void releaseMediaplayerIfExist() {
 		if (mediaPlayer != null) {
+			if(mediaPlayer.isPlaying())
 			mediaPlayer.release();
 			mediaPlayer = null;
 		}

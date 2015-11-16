@@ -18,6 +18,7 @@
 
     <application
         android:allowBackup="true"
+        android:name="lyn.android.LynApplication"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
@@ -47,18 +48,47 @@
             android:name="lyn.android.media.RecordActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name="lyn.android.media.TestPlayerPauseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lyn.android.dialog.DialogActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="lyn.android.media.MediaPlayerTestActivity"
             android:hardwareAccelerated="true"
             android:screenOrientation="portrait" />
-		<activity 
-		    android:name="lyn.android.media.MediaPlayerViewTestActivity"
+        <activity
+            android:name="lyn.android.media.MediaPlayerViewTestActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="lyn.android.media.MediaCacheActivty"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lyn.android.handler.HandlerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lyn.android.activity.CleanTopActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lyn.android.activity.CleanTopOneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="lyn.android.activity.CleanTopTwoActivity"
+            android:screenOrientation="portrait" />
+        
+        <activity 
+            android:name="lyn.android.keyboard.KeyboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            />
         <activity
             android:name="lyn.android.fragment.stack.FragmentStackActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-        <activity android:name=".HomeActivity" >
+        <activity android:name=".HomeActivity" 
+            android:theme="@style/haha"
+            >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
 
